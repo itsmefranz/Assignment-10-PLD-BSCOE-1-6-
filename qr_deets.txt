@@ -1,0 +1,23 @@
+Scanned QR Code:
+CONTACT TRACING INFORMATION
+
+Complete Name: Daniella Francine P. Velasquez
+Address: San Antonio
+Age: 18
+Sex: Female
+
+Vaccination Dose: Fully Vaccinated
+Vaccine: Sinovac
+
+COVID Sysmptoms: None
+
+Last place you went: South Korea
+
+Last people you interacted with:
+- Kaiden
+- Dolores
+- Bruno
+
+
+Date: 2/19/2022
+Time: 15:53
