@@ -38,3 +38,22 @@ def readQRc(frame):
             file.write("Scanned QR Code:" + qrcodeInfo + (f"\n\n\nDate: {datecurrent}\nTime: {timecurrent}"))
     return frame
 
+def read():
+
+    # initializing web cam 
+    webcam = cv2.VideoCapture(0)
+    ret, frame = webcam.read()
+
+    # loop to continuously scan for QR and not close
+    while ret:
+        ret, frame = webcam.read()
+        frame = readQRc(frame)
+        cv2.imshow('QR Code Reader', frame)
+        if cv2.waitKey(1) & 0xFF == 27:
+            break
+    
+    # closing webcam
+    webcam.release()
+    cv2.destroyAllWindows()
+
+read()
