@@ -6,18 +6,24 @@ Address: San Antonio
 Age: 18
 Sex: Female
 
-Vaccination Dose: Fully Vaccinated
-Vaccine: Sinovac
+Vaccination Dose: 
+> Fully Vaccinated
 
-COVID Sysmptoms: None
+Vaccine: 
+> Sinovac
 
-Last place you went: South Korea
+COVID Sysmptoms: 
+> None
+
+Last place you went: 
+> South Korea
 
 Last people you interacted with:
-- Kaiden
-- Dolores
-- Bruno
-
+> Chris Evans
+> Tom Holland
+> Tom Hiddlestone
+> Chris Hemsworth
+> Sebastian Stan
 
 Date: 2/19/2022
 Time: 15:53
