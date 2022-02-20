@@ -18,28 +18,27 @@ def readQRc(frame):
     # deciphers the displayed qr code scanned from the webcam
     qr_code = pyzbar.decode(frame)
     for qrcode in qr_code:
-        x, y , w, h = qrcode.rect
+        frame1, frame2 , frame3, frame4 = qrcode.rect
 
         # configures the date and time
         current = datetime.datetime.current()
-        current_date = "%s/%s/%s" % (current.daycurrent.month,current.year)
+        current_date = "%s/%s/%s" % (current.day,current.month,current.year)
         current_time = "%s:%s" % (current.minute,current.hour)
 
         # displays a rectangle to detect the qr code
-        infoqrcode = qrcode.data.decode('utf-8')
-        cv2.rectangle(frame, (x, y),(x+w, y+h), (255, 0, 0), 2)
+        qr_data = qrcode.data.decode('utf-8')
+        cv2.rectangle(frame, (frame1, frame2),(frame1+frame3, frame2+frame4), (255, 0, 0), 2)
         
         # displays the data
-        font_type = cv2.FONT_HERSHEY_SCRIPT_SIMPLEX
-        cv2.putText(frame, "CONTACT TRACING INFORMATION", (x + 6, y - 6), font_type, 1.0, (0, 0, 255), 3)
+        font_type = cv2.FONT_HERSHEY_COMPLEX_SMALL
+        cv2.putText(frame, "CONTACT TRACING INFORMATION", (frame1 + 6, frame2 - 6), font_type, 1.0, (0, 0, 255), 3)
 
         # inputs into a text format
         with open("qr_deets.txt", mode ='w') as file:
-            file.write("Scanned QR Code:" + infoqrcode + (f"\n\n\nDate: {current_date}\nTime: {current_time}"))
+            file.write("Scanned QR Code:" + qr_data + (f"\n\n\nDate: {current_date}\nTime: {current_time}"))
     return frame
 
 def read():
-
     # initiates a web cam to scan qr
     webcam = cv2.VideoCapture(0)
     ret, frame = webcam.read()
